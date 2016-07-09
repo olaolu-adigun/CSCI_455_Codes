@@ -1,0 +1,52 @@
+Name: ADIGUN OLAOLUWA
+USC loginid: adigun
+CSCI 455 PA1
+Spring 2016
+
+----------------------------------------------
+CERTIFY IT'S YOUR WORK
+
+"I certify that the work submitted for this assignment does not
+violate USC's student conduct code.  In particular, the work is my
+own, not a collaboration, and does not involve code created by other
+people, except for the the resources explicitly mentioned in the CS 455
+Course Syllabus.  And I did not share my solution or parts of it with
+other students in the course."
+
+Initial below to "sign" the above statement:
+
+O. A. Adigun
+----------------------------------------------
+ACKNOWLEDGE ANY OUTSIDE SOURCES
+
+List here any code you submitted for this assignment that was written
+with significant help of a course staff member, or code used from the
+textbook.  Be specific about what methods or algorithms are involved,
+and what sections of the textbook are involved (if applicable): [you do
+not need to list any of the code that we wrote for the assignment,
+i.e., the contents of the starter files for the assignment]
+
+
+----------------------------------------------
+KNOWN BUGS or LIMITATIONS:
+
+None that I discovered
+----------------------------------------------
+ANY OTHER NOTES FOR THE GRADER:
+ -  The step size should not exceed 200 except the frame size is changed. Starting at (200,200) on a frame of (400,400) means that the walk will go out of the frame if the step size is greater than 200.
+
+ - I also took into consideration the possibility of the random walk going outside the frame when close to the edges of the frame. So I implemented my solution so that walk is only limited to the size of the frame.  
+ 
+----------------------------------------------
+ANSWERS TO ASSIGNMENT README QUESTIONS (if applicable):
+
+1.)  The dead ends exit when the drunkard moves only through a single direction to the end an moves away from the end through that same single direction through which it enters the end.
+This happens when the random integer that indicates the direction of step taken gives a constant value when it enters the dead end.
+
+2.) When I iconified (minimized) the window, the structure of the random walk changed and it was displayed on the frame. The size of the window also became smaller leaving the frame size at (400,400).
+ When I de-iconified it (maximize) the window, the structure of the random walk changed again and it was displayed on the top-left segment of the entire frame. This top-left has the same size has the same size with the frame size defined in the code (400,400). This maximized the size of the frame.
+
+3.)
+- One way to solve this is to create a buffer paint outside the paintComponent method. The buffer paint is then painted by the paintComponent on the frame. So each time window redraws and consequently re-initiailizes the paintComponent, the buffer paint stays the same. In this case maximizing or minimizing the window will not change the image.
+
+- We can also using WindowsEventListener to define actions to take when the window is redrawn.

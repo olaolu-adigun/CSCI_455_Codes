@@ -1,0 +1,82 @@
+#include <vector>;
+#include <iostream>;
+
+using namespace std;
+
+vector<int> readValues() {
+ 
+  vector<int> ans;
+  int val;
+
+  while (!cin.eof()) {
+    
+    cin >> val;
+    ans.push_back(val);
+  }
+  return ans;
+}
+
+void printVals (vector<int> V) {
+  
+  int val;
+  int k = V.size();
+  for (vector<int>::V i =0; i < k; i++)
+  {
+    cout << V[i] << " ";
+  }
+
+}
+
+
+vector<int> valsGTO (vector<int> V) {
+  
+  vector<int> ans;
+  int val;
+  int k = V.size();
+  for (vector<int>::V i =0; i < k; i++)
+  {
+     if ( V[i] > 3)
+     {
+	ans.push_back(V[i]);
+     }
+  }
+  return ans;
+}
+
+int findLast(vector<int> v , int target) {
+  
+  int val = -1;
+  int k = v.size(); 
+  for (vector<int>::v i =0; i < k; i++)
+  {
+     if ( v[i] == target)
+     {
+	v = i;
+     }
+  }
+  return val;
+}
+
+void testFindLast(vector<int> v, int target) {
+
+   int t = findLast(v,target);
+    
+  if (t == -1)
+   {
+     cout << target << " is not in vector ";
+     printVals(v);
+     cout <<endln; 
+   }
+   else 
+   {
+      cout << "Last position is "<< t <<endln;
+      cout << "Target is " << target<< endln;
+      cout << "Vector is " << printVals(v) << endln; 
+   }
+
+}
+
+int main(){
+  
+  
+}

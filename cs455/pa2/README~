@@ -1,0 +1,54 @@
+Name: ADIGUN OLAOLUWA 
+USC loginid:adigun	
+CSCI 455 PA2
+Spring 2016
+
+----------------------------------------------
+CERTIFY IT'S YOUR WORK
+
+"I certify that the work submitted for this assignment does not
+violate USC's student conduct code.  In particular, the work is my
+own, not a collaboration, and does not involve code created by other
+people, except for the the resources explicitly mentioned in the CS 455
+Course Syllabus.  And I did not share my solution or parts of it with
+other students in the course."
+
+Initial below to "sign" the above statement:
+
+O. A. Adigun
+----------------------------------------------
+ACKNOWLEDGE ANY OUTSIDE SOURCES
+
+List here any code you submitted for this assignment that was written
+with significant help of a course staff member, or code used from the
+textbook.  Be specific about what methods or algorithms are involved,
+and what sections of the textbook are involved (if applicable): [you do
+not need to list any of the code that we wrote for the assignment,
+i.e., the contents of the starter files for the assignment]
+
+NONE
+----------------------------------------------
+KNOWN BUGS or LIMITATIONS:
+
+
+NONE
+----------------------------------------------
+ANY OTHER NOTES FOR THE GRADER:
+
+1). DEFAULT CONSTRUCTOR (public SolitaireBoard()):
+I declared the random generator for default the defualt constructor as a local variable because the game uses the random generator once in a lifetime of the game. So there was no need initializing it as an instance variable.
+
+
+2). HELPER FUNCTIONS (BulgarianSolitaireSimulator()):
+The user input determines how the game works. I added two helper functions as private static methods to determine how the game works based on the user's specified options. The methods are stepChoice
+
+
+3). HELPER FUNCTIONS (SolitaireBoard()):
+The following methods share a sizeable amount of common code (isValidSolitaireBoard() and isValidConfigString(configString)). I factored out the common code for  (isValidSolitaireBoard() and isValidConfigString(configString)  to avoid duplication of code. The comon code is more than 30 lines so I decided to break the common code into two private methods isValidConfiguration and isValidContent. So isValidConfiguration calls isValidContent when testing for validity.
+
+
+4). isDone():
+ I took advantage of the empty spaces in the partially filled array (cardPiles) to test when the game is done. I cleared the excess locations used after testing. I did this to achieve O(n) time requirement. 
+
+5). playRound(): 
+For the card removal I adjusted the index carefully so as to reduce the time rquirement for the task. I was able to  reduce the time requirement to order O(n) with this approach.

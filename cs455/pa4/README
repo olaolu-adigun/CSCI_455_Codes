@@ -1,0 +1,152 @@
+Name: ADIGUN OLAOLUWA 
+USC loginid: 2543889569
+CSCI 455 PA4
+Spring 2016
+
+----------------------------------------------
+CERTIFY IT'S YOUR WORK
+
+"I certify that the work submitted for this assignment does not
+violate USC's student conduct code.  In particular, the work is my
+own, not a collaboration, and does not involve code created by other
+people, except for the the resources explicitly mentioned in the CS 455
+Course Syllabus.  And I did not share my solution or parts of it with
+other students in the course."
+
+Initial below to "sign" the above statement:
+
+O.A. Adigun
+----------------------------------------------
+ACKNOWLEDGE ANY OUTSIDE SOURCES
+
+List here any code you submitted for this assignment that was written
+with significant help of a course staff member, or code used from the
+textbook.  Be specific about what methods or algorithms are involved,
+and what sections of the textbook are involved (if applicable): [you do
+not need to list any of the code that we wrote for the assignment,
+i.e., the contents of the starter files for the assignment]
+
+
+
+----------------------------------------------
+KNOWN BUGS or LIMITATIONS:
+
+
+NONE
+----------------------------------------------
+DESCRIPTION OF YOUR CLASS DESIGN AND ALGORITHMS AND DATA STRUCTURES USED:
+
+CLASS DESIGN:
+
+I used 4 classes namely:
+-- Prefix
+-- RandomTextGenerator
+-- BadInputException
+-- GenText (contains main  method)
+
+Prefix Class.
+
+The Prefix object holds a set of words as a string prefix.
+It has 5 public methods.
+-- getPrefix:    It returns the content of the prefix
+-- validPrefix:  It takes in a map containing valid prefixes and returns whether
+   		 the prefix is on the map or not.
+-- getNextWord:  It takes in a map containing all prefixes and associated 
+   		 suffixes.It returns the list of possible words after prefix.
+-- updatePrefix: It takes in a string, attached it to the end of the prefix and 
+   		 removes the first of the prefix. It returns the new string formed.
+
+
+RandomTextGenerator Class.
+
+This holds the text from the input file in an ArrayList and then generates
+a text from the it using the Markov model.
+
+Data Structure.
+-- ArrayList: The ArrayList holdd all the words in the text accoridng to
+   	      the order of the words in the text. I used this ArrayList because 
+	      it makes it easier and faster to randomly generate a prefix due to
+	      the random access property of an ArrayList.
+-- HashMap:   The hashMap stores all pairs of prefix and list of possible words 
+              after the prefix. The keys are the prefixes, and the values are 
+	      the list of possible words after the prefix (key).    
+	      This makes it easier and faster to lookup words after each prefix.
+-- LinkedList: For each prefix considered, a LinkedList holds the prefix, 
+   	       possible successors, and the word picked from the sucessors.
+	       I used a LinkedList because it is makes it is faster to add 
+	       something to it. Since I will need to get the content of the 
+	       list according to the ordering of addition, it does not incur
+	       any excess computational cost. 
+    
+Methods
+The class has one public method and some private methods.
+Public Method (Non-Static):
+-- getText: This method generates the random text using the markov model. It 
+            uses the static method helperGetText to control this task. It 
+	    returns a list of list. The list presents the prefixes according to
+	    order of selection. Each list in the super list contains details of
+	    prefix picked, possible successors, and word generated.
+
+Private Methods (Static):
+-- helperGetText: This controls the task of generating Markovian text. It relies
+   		  on some other helper functions that handles some parts of the
+		  task. gets the Markovian text.
+
+-- helpUpdateList: For each prefix, this writes the prefix, possible successors,
+   		   and word generated using Markov model into a list.
+
+-- generatePreWords: This method gnerates a string containing prefixSize 
+   		     words. The method generates the words for a prefix at the 
+		     begining and also when the current prefix is at the end of
+		     the text.
+-- genMap:    This method writes all the possible prefixes into a map, and  
+   	      attaches the corresponding list of words that follows them.
+
+-- markovPick:  This methods picks a word randomly from a list according to the
+		markov model.
+
+
+GenText Class
+ 
+Contains the main method for the program. The main program takes the user's input 
+arguments and then executes the program. It uses some other private methods to 
+handle the tasks. The private methods are descibed below:
+
+-- textFinder:  It creates the RandomTextGenerator and gets the randomly
+   		selected text. The main method uses this method.
+-- writeToOutput: This method writes the text generated into an output file for 
+   		  non-debug mode.
+-- writeToOutputDebug: This method controls writing the generated  text into the 
+                       output file using for debug mode. It uses the
+   		               helperWriteDebug method.
+-- helperWriteDebug:  It handles writing into the output file.
+
+
+BadInputException Class
+
+This class is a subclass of IOException. It handles errors associated with input
+data.
+
+----------------------------------------------
+ANY OTHER NOTES FOR THE GRADER:
+
+1.) For RandomTextGenerator class, I used smaller helper functions so as not to 
+    exceed the 30-line rule per method. The same thing is applciable to the GenText
+	class.
+	
+2.) For markovPick method, I copied the LinkedList into an ArrayList because it makes
+    easier and faster to randomly pick an element. Also, since the list contains 
+	repeated words, drawing randomly from it satisifies the markovian rule.
+	
+3.)	I did not have to write hashCode() method and equals() method for prefix 
+	becauuse I relied on the ones for String. I was putting the prefix into 
+	the map using the string content of the prefix and not the reference holding 
+	the prefix.
+	
+
+
+
+
+
+
+

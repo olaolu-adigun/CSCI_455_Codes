@@ -1,0 +1,58 @@
+// Name: ADIGUN OLAOLUWA
+// USC loginid: adigun
+// CS 455 PA1
+// Spring 2016
+
+ /** 
+    RandomWalkerComponent
+      Create the random walk object to be displayed on the frame.
+ */
+
+import javax.swing.JComponent;
+import java.awt.Graphics;
+
+
+public class RandomWalkComponent extends JComponent {
+
+     // Add instance variables
+     private Drunkard walker;
+     private int numOfWalk; 
+
+  
+     /**
+	Create an object of random walks
+	@param walker is the Drunkard that taking the walks
+	@param numOfWalk is the number of walks by the drunkard
+     */ 
+     public RandomWalkComponent(Drunkard drunk, int walks) {
+
+        walker = drunk;
+        numOfWalk = walks;
+     }
+ 
+
+     /** 
+        Create the drawing for the walks by drunkard.
+     */
+    
+     public void paintComponent (Graphics sketch) {
+	 
+	 super.paintComponent(sketch);
+
+	 // Draw the steps taken by the drunkard
+	 for (int i = 0; i < numOfWalk ; i++)
+	 {
+	    ImPoint from = walker.getCurrentLoc();
+
+	    //Take a step up, down, left, down, or right
+	    walker.takeStep();
+
+	    ImPoint to = walker.getCurrentLoc();
+
+	    // Draw a line joining location before taking a step to the the location after the step 
+	    // Line2D.Double walk = new Line2D.Double(from.getPoint2D(), to.getPoint2D());
+	    sketch.drawLine((int)(from.getX()), (int)(from.getY()), (int)(to.getX()), (int)(to.getY()));
+	    //sketch.draw(walk);
+	 }
+     }
+}

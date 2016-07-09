@@ -1,0 +1,74 @@
+// Name: ADIGUN OLAOLUWA
+// USC loginid: adigun
+// CS 455 PA1
+// Spring 2016
+/**
+   Drunkard Tester     
+   	Console-based program for testing the Drunkard
+	Uses predefined data to test the class	
+	Compares the actual value and expected value
+	
+	AUTHOR: ADIGUN OLAOLUWA
+	USC Loginid: adigun
+*/
+
+
+public class DrunkardTester {
+  
+  /**  
+     Class driver for testing Drunkard Class
+     @params args not used
+  */
+    public static void main( String []args) {
+	   
+       // Create ImPoint for test cases
+       ImPoint test1 = new ImPoint(100,100);
+       ImPoint test2 = new ImPoint( 50,200);
+       ImPoint test3 = new ImPoint(300,100);
+	   
+       // Create step size for test cases
+       int step1 =  5;
+       int step2 = 10;
+       int step3 = 20;
+	   
+       // Run test cases for Drunkard class
+       drunkardTest(test1,step1);	
+       drunkardTest(test2,step2);
+       drunkardTest(test3,step3);
+    }
+
+    /**
+	Test all Drunkard methods on a  sample Drunkard object
+    */
+
+     private static void drunkardTest(ImPoint initLoc, int step){
+	  
+        // Create Drunkard object
+        Drunkard testObject = new Drunkard(initLoc, step);
+
+	System.out.println();	  
+        System.out.println("Testing with start location: " + initLoc + " and stepsize: " + step);
+        System.out.println("Testing getCurrentLoc ......");
+
+	// Print the current location of the drunkard
+	System.out.println("Current Location: " + testObject.getCurrentLoc()); 
+
+	// Run the test case for takeStep
+	testTakeStep(testObject);
+	  
+     }
+
+   /**
+       Test the takeStep method that takes a random step to right, left, up, or down
+   */
+
+     private static void testTakeStep(Drunkard drunkard){
+
+	System.out.println("Testing takeStep.....");
+	System.out.println("Location before taking a step: "+ drunkard.getCurrentLoc());
+	  
+	// Test takeStep
+	drunkard.takeStep();
+	System.out.println("Location after taking a step: [Expected: A step up, down, left, or right]: " + drunkard.getCurrentLoc());
+     }
+}

@@ -1,0 +1,32 @@
+import java.util.GregorianCalendar;
+import java.util.Calendar;
+import java.util.Scanner;
+
+public class Birthday{
+    public static void main(String [] args){
+
+	Scanner in = new Scanner(System.in);
+	System.out.print("Enter your birth month [1..12]: ");
+	int MONTH = in.nextInt();
+	System.out.print("Enter your birth day of month: ");
+	int DAY_OF_MONTH = in.nextInt();
+	System.out.print("Enter your birth year [4-digit year]: ");
+	int YEAR = in.nextInt();
+
+	Calendar birthday = new GregorianCalendar(YEAR,MONTH-1,DAY_OF_MONTH);
+        int day_birthday = birthday.get(Calendar.DAY_OF_YEAR);
+	
+	Calendar today = new GregorianCalendar();
+	int day_today = today.get(Calendar.DAY_OF_YEAR);
+	
+	if (day_today > day_birthday)
+	    {
+		System.out.println("Your birthday has already happened this year.");
+	    }
+	else 
+	    {
+		System..out.println("Your birthday has not happened this year.");
+	    }
+
+    }
+}

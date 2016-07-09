@@ -1,0 +1,56 @@
+// Name: ADIGUN OLAOLUWA
+// USC loginid: adigun
+// CS 455 PA1
+// Spring 2016
+
+/** 
+  RandomWalkViewer
+     This displays the walks made by a Drunkard on a frame.
+*/
+
+import java.util.Scanner;
+import javax.swing.JFrame;
+
+
+public class RandomWalkViewer {
+
+     /**  
+	Main method for display of walks by a Drunkard
+	@params args not used
+     */
+   public static void main (String [] args) {
+
+     
+      // Enter the number of random walks 
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the number of steps: ");
+      int numberOfSteps = input.nextInt();
+     
+      // For invalid input print error message and request for new input
+      while (numberOfSteps < 1)
+      {
+         System.out.println("ERROR: Number entered must be greater than 0.");
+         System.out.print("Enter the number of steps: ");
+         numberOfSteps = input.nextInt();
+      }
+	
+      //Create the Drunkard object for the random walk
+      ImPoint initialLoc = new ImPoint(200,200);
+      int STEPSIZE = 5;
+      Drunkard drunk = new Drunkard(initialLoc, STEPSIZE);
+
+      // Create the drawing of random walks by the Drunkard 
+      RandomWalkComponent component = new RandomWalkComponent(drunk, numberOfSteps);
+
+       //Create and set properties of the display frame
+      JFrame display = new JFrame();
+      display.setSize(400,400);
+      display.setTitle("Random Walk");
+
+      //Display the walk on the frame
+      display.add(component);
+      display.setVisible(true);
+      display.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+   }
+
+}

@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+/**
+ * Finds frequency of each word in a file.
+ * Unlike the lecture version of this code, this one is smarter
+ * about what it considers a word.
+ *
+ * Version for the lab.
+ */
+
+public class ConcordDriver {
+
+
+    public static void main(String[] args) {
+
+	Concord concord = new Concord();
+		
+	Scanner in = new Scanner(System.in);
+		
+	concord.addData(in);		
+	//System.out.println("Concord alpha order");
+    	//concord.print(System.out);
+	
+	System.out.println("Concord Numeric Order");
+     	concord.printSorted(System.out);
+		
+    }
+
+}

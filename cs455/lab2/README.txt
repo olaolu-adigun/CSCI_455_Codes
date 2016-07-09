@@ -1,0 +1,26 @@
+1.0)  OLAOLUWA ADIGUN      CS455        LAB2 
+
+1.1)  import java.util.GregorianCalendar;
+
+1.2)  Calendar calendar = new GregorianCalendar(1995,0,20);
+
+1.3)   System.out.println((calendar.get(Calendar.MONTH)+1) +"/" + calendar.get(Calendar.DAY_OF_MONTH) +"/"+ calendar.get(Calendar.YEAR));
+
+1.4)  0
+
+1.5)  calendar.add(Calendar.DAY_OF_MONTH,20);
+
+
+2.1)  "cannot find symbol" - Initially I did not include the import statement for Calendar. I added "import java.util.Calendar" and it corrected the error.
+
+      "  ')' expected   "  - I did not add the closing parenthesis for the println statement. I closed the parenthsis and it rectified the error.
+
+
+3.1) " ';' expected "       - I did not include the semi-colon at the end of line 24. I rectified it and it worked.
+     
+     " not a statement"     - I typed "System..out" for printing the output. I removed the second dot and it worked.
+
+
+3.2)  1/1/1990  - "Your birhtday has already happened this year"
+      12/30/1991- "Your birthday has not happened this year"
+      6/12/1993 - "Your birthday has not happened this year"

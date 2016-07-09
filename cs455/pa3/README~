@@ -1,0 +1,69 @@
+Name: ADIGUN OLAOLUWA
+USC loginid: 2543889569
+CSCI 455 PA3
+Sping 2016
+
+----------------------------------------------
+CERTIFY IT'S YOUR WORK
+
+"I certify that the work submitted for this assignment does not
+violate USC's student conduct code.  In particular, the work is my
+own, not a collaboration, and does not involve code created by other
+people, except for the the resources explicitly mentioned in the CS 455
+Course Syllabus.  And I did not share my solution or parts of it with
+other students in the course."
+
+Initial below to "sign" the above statement:
+
+ADIGUN O.A.
+----------------------------------------------
+ACKNOWLEDGE ANY OUTSIDE SOURCES
+
+List here any code you submitted for this assignment that was written
+with significant help of a course staff member, or code used from the
+textbook.  Be specific about what methods or algorithms are involved,
+and what sections of the textbook are involved (if applicable): [you do
+not need to list any of the code that we wrote for the assignment,
+i.e., the contents of the starter files for the assignment]
+
+
+NONE
+----------------------------------------------
+KNOWN BUGS or LIMITATIONS:
+
+
+NONE
+----------------------------------------------
+ANY OTHER NOTES FOR THE GRADER:
+
+1). For Maze class I created an helper function "recursiveSearch". This 
+search method uses this helper function to recursively search for a path
+if there is one.
+
+2). For Maze class I created another helper function "adjLocation". This 
+recursiveSearch method uses this method to move to the adjacent location
+from any location on the maze.
+
+3). For MazeComponent class, I added helper function "drawMaze". This 
+function draws the free spaces and walls in the maze.The paintCommponent
+uses this function.
+
+4). For MazeComponent class I added helper function "drawMazeComponent". This
+function draws the exit and entry locations of the maze. The paint component
+uses this function.
+
+5). For MazeComponent class I also added helper function "drawPath". The 
+paintComponent uses this function to draw a valid ath if it exists.
+
+6). For drawMaze method I copied the constant values into new parameters 
+because I wanted to keep each code statement  on a single line. Using the 
+global constant paramters causes some statements  to spill over 2 lines.
+
+7). I added a new helper function "readMazeContent" to MazeViewer class. This
+function reads the file with the maze input into a 2D-array. The mazeReadFile 
+method uses this function. 
+
+
+
+
+

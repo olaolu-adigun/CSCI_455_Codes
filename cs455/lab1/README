@@ -1,0 +1,4 @@
+3.1) Hello.java:4: error: ';' expected
+	System.out.println("Hello world!")
+
+3.2) It reported that the semi-colon is missing after the last character on the line. This coincides with where the semi-colon was initially removed.

@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+public class ReadTester {
+
+    public static void main (String [] args){
+    
+     int sentinel = 1;
+     
+      Scanner in = new Scanner(System.in);
+
+      while (sentinel < 2)
+	  {
+	      ArrayList<Integer> numArrList = new ArrayList<Integer>();
+	      System.out.print("Enter a space separated list of numbers: ");
+	      String input = in.nextLine();
+	      
+	      Scanner num = new Scanner(input);
+	      
+	      while(num.hasNextInt())
+		  {
+		      numArrList.add(num.nextInt());
+		  }   
+	      System.out.println("The numebers were: " + numArrList);
+	  } 
+     }
+
+}

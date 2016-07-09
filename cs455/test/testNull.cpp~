@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+  char *c;
+  cout << "\"" <<  *c << "\"" << endl;  // surround char with "
+  cout << "\"" <<  c << "\"" << endl;
+  c = new char;
+  cout << "\"" <<  *c << "\"" << endl;
+  cout << "\"" <<  c << "\"" << endl;
+  *c = 'm';
+  cout << "\"" <<  *c << "\"" << endl;
+cout << "\"" <<  c << "\"" << endl;
+  *c = NULL;
+  cout << "\"" <<  *c << "\"" << endl;
+
+
+
+  return 0;
+
+}
